@@ -97,7 +97,7 @@ func main() {
 
     // 创建 HTTP 请求
     client := &http.Client{}
-    if strings.HasPrefix(rawURL, "https://api.dandanplay.net/api/v2/login") {
+    if strings.HasPrefix(rawURL, "https://api.dandanplay.net/api/v2/login") && *data != "" {
         var loginData map[string]any
         if err := json.NewDecoder(strings.NewReader(*data)).Decode(&loginData); err != nil {
             fmt.Printf("Failed to decode JSON data: %v\n", err)
